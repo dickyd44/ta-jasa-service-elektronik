@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('type');
             $table->date('date')->whereDate()->whereMonth()->whereYear();
             $table->string('price');
-            $table->string('status')->default('ON PROGRESS');
+            $table->string('status')->default('PROGRESS');
             $table->timestamps();
         });
     }

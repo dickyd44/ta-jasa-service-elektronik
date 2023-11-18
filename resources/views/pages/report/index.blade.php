@@ -44,7 +44,9 @@
                                     <td>{{ $item->type }}</td>
                                     <td>{{ $item->date }}</td>
                                     <td>{{ $item->price }}</td>
-                                    <td class="font-weight-bold">{{ $item->status }}</td>
+                                    <td>
+                                        @include('includes.status-order')
+                                    </td>
                                 </tr>
                                 <?php $i++ ?>
                                 @endforeach

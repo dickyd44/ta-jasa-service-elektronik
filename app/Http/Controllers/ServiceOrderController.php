@@ -14,9 +14,9 @@ class ServiceOrderController extends Controller
      */
     public function index()
     {
-        $types = ['AC', 'LISTRIK', 'WATER HITTER', 'KULKAS', 'MESIN CUCI', 'KIPAS ANGIN'];
+        $types = ['NONE ---', 'AC', 'LISTRIK', 'WATER HITTER', 'KULKAS', 'MESIN CUCI', 'KIPAS ANGIN'];
+        $items = ServiceOrder::orderByRaw('status="PENDING" desc')->orderBy('created_at', 'desc')->get();
         $changes = ['SUCCESS', 'PENDING'];
-        $items = ServiceOrder::orderBy('created_at', 'desc')->get();
 
         return view('pages.service-order.index', [
             'types' => $types,

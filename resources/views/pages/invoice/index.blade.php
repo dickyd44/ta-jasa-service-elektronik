@@ -45,7 +45,15 @@
                                     <td>{{ $item->type }}</td>
                                     <td>{{ $item->date }}</td>
                                     <td>{{ $item->price }}</td>
-                                    <td class="font-weight-bold">{{ $item->status }}</td>
+                                    <td>
+                                        @if ( $item->status == 'progress' )
+                                        <span class="badge badge-danger">PROGRESS</span>
+                                        @else
+                                        @if ($item->status == 'success')
+                                        <span class="badge badge-success">SUCCESS</span>
+                                        @endif
+                                        @endif
+                                    </td>
                                     <td>
                                         <a href="/invoice/print/{{ $item->id }}" class="btn btn-info mr-2" target="_blank">
                                             <i class="fas fa-print"></i>
