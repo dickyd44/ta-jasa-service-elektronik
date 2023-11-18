@@ -9,7 +9,7 @@ class InvoiceController extends Controller
 {
     public function index()
     {
-        $items = ServiceOrder::orderBy('created_at', 'desc')->get();
+        $items = ServiceOrder::orderByRaw('status="PENDING" desc')->orderBy('created_at', 'desc')->get();
         return view('pages.invoice.index', [
             'items' => $items,
         ]);

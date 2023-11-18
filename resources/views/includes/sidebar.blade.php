@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
         <img src="https://media.istockphoto.com/id/1141244133/id/vektor/perbaikan-komputer-logo-komputer-digital-vektor-layanan-perbaikan-simbol.jpg?s=170667a&w=0&k=20&c=qi2rBC4ZP8h5SqAVlGBHlrJxkYJQlyA9dzoogLLpDm4=" alt="Logo" class="brand-image img-circle" />
-        <span class="brand-text font-weight-light font-weight-bold">A&H - Technique</span>
+        <span class="brand-text font-weight-light font-weight-bold">A&H - Tekhnik</span>
     </a>
 
     <!-- Sidebar -->
