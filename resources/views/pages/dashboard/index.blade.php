@@ -13,48 +13,35 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3 col-6">
-                <!-- small box -->
                 <div class="small-box bg-info">
                     <div class="inner">
                         <div class="d-flex">
                             <h3>{{ $totalProgress }}</h3>
-                            <i class="fas fa-cogs ml-auto p-2"></i>
+                            <i class="fas fa-cogs ml-auto p-2" style="font-size: 2rem"></i>
                         </div>
-
                         <p class="font-weight-bold">Service Orders Progress</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-bag"></i>
                     </div>
                     <i class="fas fa-circle text-hide"></i>
                 </div>
             </div>
-            <!-- ./col -->
             <div class="col-lg-3 col-6">
-                <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
                         <div class="d-flex">
                             <h3>{{ $totalSuccess }}</h3>
-                            <i class="fas fa-check ml-auto p-2"></i>
+                            <i class="fas fa-check ml-auto p-2"style="font-size: 2rem"></i>
                         </div>
-
                         <p class="font-weight-bold">Service Orders Success</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
                     </div>
                     <i class="fas fa-circle text-hide"></i>
                 </div>
             </div>
-            <!-- ./col -->
             <div class="col-lg-3 col-6">
-                <!-- small box -->
                 <div class="small-box bg-danger">
                     <div class="inner">
                         <div class="d-flex">
                             <h3>{{ $totalPending }}</h3>
-                            <i class="fas fa-clock ml-auto p-2"></i>
+                            <i class="fas fa-clock ml-auto p-2" style="font-size: 2rem"></i>
                         </div>
 
                         <p class="font-weight-bold">Service Orders Pending</p>
@@ -65,14 +52,12 @@
                     <i class="fas fa-circle text-hide"></i>
                 </div>
             </div>
-            <!-- ./col -->
             <div class="col-lg-3 col-6">
-                <!-- small box -->
                 <div class="small-box bg-warning">
                     <div class="inner">
                         <div class="d-flex">
                             <h3>{{ $totalCustomer }}</h3>
-                            <i class="fas fa-user ml-auto p-2"></i>
+                            <i class="fas fa-user ml-auto p-2" style="font-size: 2rem"></i>
                         </div>
 
                         <p class="font-weight-bold">Service Orders Customers</p>

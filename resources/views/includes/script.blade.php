@@ -17,6 +17,7 @@
 <script src="{{ url('/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
 <script src="{{ url('/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 <script src="{{ url('/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+<script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
 <!-- SweetAlert2 -->
 <script src="{{ url('/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
 <script>
