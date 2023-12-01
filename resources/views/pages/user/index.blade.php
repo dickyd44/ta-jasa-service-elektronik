@@ -57,7 +57,7 @@
                                             <form id="formDelete{{ $item->id }}" action="{{ route('user.destroy', $item->id) }}" method="POST" class="d-inline">
                                                 @csrf
                                                 @method('delete')
-                                                <a type="button" class="btn btn-danger" onclick="handleDelete({{ $item->id }})" title="Hapus">
+                                                <a type="button" class="btn btn-danger" onclick="handleDelete('{{ $item->id }}')" title="Hapus">
                                                     <i class="fa fa-trash"></i>
                                                 </a>
                                             </form>
