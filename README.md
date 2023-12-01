@@ -62,3 +62,14 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+<!-- form update type
+<div class="form-group">
+  <label for="InputType">Type</label>
+    <select class="form-control" name="type" id="type">
+       @foreach ($types as $type)
+       <option value="{{ $type }}" {{ $item->type == $type ? 'selected' : '' }}>{{ $type }}</option>
+       @endforeach
+    </select>
+</div>   -->

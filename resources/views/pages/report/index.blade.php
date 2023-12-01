@@ -26,7 +26,6 @@
                                     <th>Address</th>
                                     <th>Phone</th>
                                     <th>Problem</th>
-                                    <th>Type</th>
                                     <th>Date</th>
                                     <th>Price</th>
                                     <th>Status</th>
@@ -41,7 +40,6 @@
                                     <td>{{ $item->address }}</td>
                                     <td>{{ $item->phone }}</td>
                                     <td>{{ $item->problem }}</td>
-                                    <td>{{ $item->type }}</td>
                                     <td>{{ $item->date }}</td>
                                     <td>{{ $item->price }}</td>
                                     <td>

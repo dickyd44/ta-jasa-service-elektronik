@@ -30,14 +30,6 @@
                         <input type="text" class="form-control" id="InputProblem" name="problem" value="{{ $item->problem }}" required>
                     </div>
                     <div class="form-group">
-                        <label for="InputType">Type</label>
-                        <select class="form-control" name="type" id="type">
-                            @foreach ($types as $type)
-                            <option value="{{ $type }}" {{ $item->type == $type ? 'selected' : '' }}>{{ $type }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <label for="InputDate">Date</label>
                         <input type="date" class="form-control" id="InputDate" name="date" value="{{ $item->date }}" required>
                     </div>
