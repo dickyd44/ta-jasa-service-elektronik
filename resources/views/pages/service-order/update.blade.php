@@ -35,7 +35,7 @@
                     </div>
                     <div class="form-group">
                         <label for="InputPrice">Price</label>
-                        <input type="number" class="form-control" id="InputPrice" name="price" value="{{ floor($item->price) }}" required>
+                        <input type="number" class="form-control" id="InputPrice" name="price" value="{{ $item->price }}" required>
                     </div>
                 </div>
                 <div class="modal-footer">

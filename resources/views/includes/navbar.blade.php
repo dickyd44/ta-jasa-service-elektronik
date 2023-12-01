@@ -12,7 +12,8 @@
         <li class="nav-item dropdown user user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                 <img class="img-circle user-image" src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png" />
-                <span class="hidden-xs font-weight-bold">{{ request()->session()->get('user')['name']}}</span>
+                <span class="hidden-xs font-weight-bold">{{ request()->session()->get('user')['name']}}</span>&nbsp;
+                <span class="badge bg-gray">{{ request()->session()->get('user')['role']}}</span>
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <a href="/ganti-password" class="dropdown-item" data-target="#changePassword">

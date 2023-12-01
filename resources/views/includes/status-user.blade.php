@@ -1,7 +1,7 @@
 @if ( $item->role === 'ADMIN' )
-<span class="badge bg-olive">ADMIN</span>
+<span class="badge bg-secondary">ADMIN</span>
 
 @elseif ( $item->role === 'TEKNISI' )
-<span class="badge bg-navy">TEKNISI</span>
+<span class="badge bg-secondary">TEKNISI</span>
 
 @endif

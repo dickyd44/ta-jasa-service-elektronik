@@ -24,8 +24,8 @@
                             Tambah
                         </button>
                         @include('pages.service-order.create')
-                        <table id="table-primary" class="table table-bordered table-hover">
-                            <thead>
+                        <table id="table-primary" class="table table-bordered">
+                            <thead style="background: #f3f4f6">
                                 <tr>
                                     <th>No</th>
                                     <th>Name</th>

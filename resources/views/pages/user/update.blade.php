@@ -15,15 +15,15 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="InputName">Name</label>
-                        <input type="text" class="form-control" id="InputName" name="name" required value="{{ $item->name }}">
+                        <input type="text" class="form-control" id="InputName" name="name" value="{{ $item->name }}" required>
                     </div>
                     <div class="form-group">
                         <label for="InputEmail">Email address</label>
-                        <input type="email" class="form-control" id="InputEmail" name="email" required value="{{ $item->email }}">
+                        <input type="email" class="form-control" id="InputEmail" name="email" value="{{ $item->email }}" required>
                     </div>
                     <div class="form-group">
                         <label for="InputPhone">Phone</label>
-                        <input type="text" class="form-control" id="InputPhone" name="phone" required value="{{ $item->phone }}">
+                        <input type="text" class="form-control" id="InputPhone" name="phone" value="{{ $item->phone }}" required>
                     </div>
                     <div class="form-group">
                         <label for="InputRole">Role</label>
