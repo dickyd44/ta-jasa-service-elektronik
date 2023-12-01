@@ -46,7 +46,9 @@
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->email }}</td>
                                     <td>{{ $item->phone }}</td>
-                                    <td class="font-weight-bold">{{ $item->role }}</td>
+                                    <td>
+                                        @include('includes.status-user')
+                                    </td>
                                     @if (auth()->user()->role == 'ADMIN')
                                     <td>
                                         <div class="d-flex">
