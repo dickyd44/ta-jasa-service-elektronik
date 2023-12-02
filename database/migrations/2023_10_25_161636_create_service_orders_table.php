@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('address');
             $table->string('phone');
             $table->text('problem');
-            $table->date('date');
+            $table->date('date')->date_create_immutable_from_format('d Y M');
             $table->string('price');
             $table->string('status')->default('PROGRESS');
             $table->timestamps();

@@ -47,7 +47,7 @@
                                     <td>{{ $item->address }}</td>
                                     <td>{{ $item->phone }}</td>
                                     <td>{{ $item->problem }}</td>
-                                    <td>{{ $item->date }}</td>
+                                    <td>{{ date_format(date_create($item->date), 'd/m/Y') }}</td>
                                     <td>{{ $item->price }}</td>
                                     <td>
                                         @include('includes.status-order')

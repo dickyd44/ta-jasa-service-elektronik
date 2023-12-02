@@ -5,9 +5,9 @@
 <body>
     @yield('content') @include('includes.script')
 
-    <script>
+    <!-- <script>
         window.print()
-    </script>
+    </script> -->
 </body>
 
 </html>
