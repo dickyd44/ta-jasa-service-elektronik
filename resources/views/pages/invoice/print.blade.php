@@ -1,13 +1,13 @@
 @extends('layouts.document')
 
 @section('content')
-<div class="invoice p-3 mb-3">
+<div class="invoice p-3 mb-2"> {{-- mb-3 --}}
 
     <div class="row">
         <div class="col-12">
             <h4>
-                <i class="fas fa-globe"></i> AdminLTE, Inc.
-                <small class="float-right">Date: 2/10/2014</small>
+                <i class="fas fa-globe"></i> A&H - Tekhnik.
+                <small class="float-right">Date: {{ $item->date }}</small>
             </h4>
         </div>
 
@@ -17,31 +17,29 @@
         <div class="col-sm-4 invoice-col">
             From
             <address>
-                <strong>Admin, Inc.</strong><br>
-                795 Folsom Ave, Suite 600<br>
-                San Francisco, CA 94107<br>
-                Phone: (804) 123-5432<br>
-                Email: info@almasaeedstudio.com
+                <strong class="badge bg-secondary">{{ request()->session()->get('user')['role']}}</strong><br>
+                <strong>{{ request()->session()->get('user')['name']}}</strong><br>
+                Tiban Indah McDermott<br>
+                Blok G. no 17, 29426<br>
+                Phone: {{ request()->session()->get('user')['phone']}}<br>
+                Email: {{ request()->session()->get('user')['email']}}
             </address>
         </div>
 
         <div class="col-sm-4 invoice-col">
             To
             <address>
-                <strong>John Doe</strong><br>
-                795 Folsom Ave, Suite 600<br>
-                San Francisco, CA 94107<br>
-                Phone: (555) 539-1037<br>
-                Email: john.doe@example.com
+                <strong>{{ $item->name }}</strong><br>
+                {{ $item->address }}<br>
+                Phone: {{ $item->phone }}<br>
             </address>
         </div>
 
         <div class="col-sm-4 invoice-col">
-            <b>Invoice #007612</b><br>
+            <b>Invoice #00{{ $item->id }}</b><br>
             <br>
-            <b>Order ID:</b> 4F3S8J<br>
-            <b>Payment Due:</b> 2/22/2014<br>
-            <b>Account:</b> 968-34567
+            <b>Order ID:</b> {{ $item->id }}<br>
+            <b>Payment Due:</b> {{ $item->date }}<br>
         </div>
 
     </div>
@@ -49,45 +47,25 @@
 
     <div class="row">
         <div class="col-12 table-responsive">
-            <table class="table table-striped">
-                <thead>
+            <table class="table table-header border">
+                <thead style="background: #eee">
                     <tr>
-                        <th>Qty</th>
-                        <th>Product</th>
-                        <th>Serial #</th>
-                        <th>Description</th>
-                        <th>Subtotal</th>
+                        <th>Invoice</th>
+                        <th>Problem</th>
+                        <th>Amount Due</th>
+                        <th>Status</th>
+                        <th>Total</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>Call of Duty</td>
-                        <td>455-981-221</td>
-                        <td>El snort testosterone trophy driving gloves handsome</td>
-                        <td>$64.50</td>
+                        <td>#00{{ $item->id }}</td>
+                        <td>{{ $item->problem }}</td>
+                        <td>{{ $item->date }}</td>
+                        <td><p class="badge badge-danger">Belum Bayar</p></td>
+                        <td>Rp. {{ $item->price }}</td>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Need for Speed IV</td>
-                        <td>247-925-726</td>
-                        <td>Wes Anderson umami biodiesel</td>
-                        <td>$50.00</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Monsters DVD</td>
-                        <td>735-845-642</td>
-                        <td>Terry Richardson helvetica tousled street art master</td>
-                        <td>$10.70</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Grown Ups Blue Ray</td>
-                        <td>422-568-642</td>
-                        <td>Tousled lomo letterpress</td>
-                        <td>$25.99</td>
-                    </tr>
+
                 </tbody>
             </table>
         </div>
@@ -98,37 +76,150 @@
 
         <div class="col-6">
             <p class="lead">Payment Methods:</p>
-            <img src="../../dist/img/credit/visa.png" alt="Visa">
-            <img src="../../dist/img/credit/mastercard.png" alt="Mastercard">
-            <img src="../../dist/img/credit/american-express.png" alt="American Express">
-            <img src="../../dist/img/credit/paypal2.png" alt="Paypal">
+            <img src="../../dist/img/credit/mandiri.png" alt="mandiri" height="45" width="63">
+            <img src="../../dist/img/credit/bca.png" alt="bca" height="45" width="50">
+            <img src="../../dist/img/credit/bni.png" alt="bni">
+            <img src="../../dist/img/credit/bri.png" alt="bri" height="50" width="55">
             <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
-                Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem
-                plugg
-                dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
+                Pembayaran bisa melalui transfer Debit yang tertera di atas.
             </p>
         </div>
 
         <div class="col-6">
-            <p class="lead">Amount Due 2/22/2014</p>
+            <p class="lead">Note:</p>
             <div class="table-responsive">
                 <table class="table">
                     <tbody>
                         <tr>
                             <th style="width:50%">Subtotal:</th>
-                            <td>$250.30</td>
+                            <td>Rp. 30.000</td>
                         </tr>
                         <tr>
-                            <th>Tax (9.3%)</th>
-                            <td>$10.34</td>
+                            <th>Tax</th>
+                            <td>Rp. 10.000</td>
                         </tr>
                         <tr>
                             <th>Shipping:</th>
-                            <td>$5.80</td>
+                            <td>Rp. 5.000</td>
                         </tr>
                         <tr>
                             <th>Total:</th>
-                            <td>$265.24</td>
+                            <td>Rp. {{ $item->price }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div style="border-block-end: 3px dashed black"></div>
+
+<div class="invoice p-3 mt-2"> {{-- mb-3 --}}
+
+    <div class="row">
+        <div class="col-12">
+            <h4>
+                <i class="fas fa-globe"></i> A&H - Tekhnik.
+                <small class="float-right">Date: {{ $item->date }}</small>
+            </h4>
+        </div>
+
+    </div>
+
+    <div class="row invoice-info">
+        <div class="col-sm-4 invoice-col">
+            From
+            <address>
+                <strong class="badge bg-secondary">{{ request()->session()->get('user')['role']}}</strong><br>
+                <strong>{{ request()->session()->get('user')['name']}}</strong><br>
+                Tiban Indah McDermott<br>
+                Blok G. no 17, 29426<br>
+                Phone: {{ request()->session()->get('user')['phone']}}<br>
+                Email: {{ request()->session()->get('user')['email']}}
+            </address>
+        </div>
+
+        <div class="col-sm-4 invoice-col">
+            To
+            <address>
+                <strong>{{ $item->name }}</strong><br>
+                {{ $item->address }}<br>
+                Phone: {{ $item->phone }}<br>
+            </address>
+        </div>
+
+        <div class="col-sm-4 invoice-col">
+            <b>Invoice #00{{ $item->id }}</b><br>
+            <br>
+            <b>Order ID:</b> {{ $item->id }}<br>
+            <b>Payment Due:</b> {{ $item->date }}<br>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-12 table-responsive">
+            <table class="table table-header border">
+                <thead style="background: #eee">
+                    <tr>
+                        <th>Invoice</th>
+                        <th>Problem</th>
+                        <th>Amount Due</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#00{{ $item->id }}</td>
+                        <td>{{ $item->problem }}</td>
+                        <td>{{ $item->date }}</td>
+                        <td><p class="badge badge-danger">Belum Bayar</p></td>
+                        <td>Rp. {{ $item->price }}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-6">
+            <p class="lead">Payment Methods:</p>
+            <img src="../../dist/img/credit/mandiri.png" alt="mandiri" height="45" width="63">
+            <img src="../../dist/img/credit/bca.png" alt="bca" height="45" width="50">
+            <img src="../../dist/img/credit/bni.png" alt="bni">
+            <img src="../../dist/img/credit/bri.png" alt="bri" height="50" width="55">
+            <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
+                Pembayaran bisa melalui transfer Debit yang tertera di atas.
+            </p>
+        </div>
+
+        <div class="col-6">
+            <p class="lead">Note:</p>
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th style="width:50%">Subtotal:</th>
+                            <td>Rp. 30.000</td>
+                        </tr>
+                        <tr>
+                            <th>Tax</th>
+                            <td>Rp. 10.000</td>
+                        </tr>
+                        <tr>
+                            <th>Shipping:</th>
+                            <td>Rp. 5.000</td>
+                        </tr>
+                        <tr>
+                            <th>Total:</th>
+                            <td>Rp. {{ $item->price }}</td>
                         </tr>
                     </tbody>
                 </table>

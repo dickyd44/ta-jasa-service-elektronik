@@ -19,7 +19,6 @@ return new class extends Migration
             $table->text('address');
             $table->string('phone');
             $table->text('problem');
-            // $table->string('type');
             $table->date('date');
             $table->string('price');
             $table->string('status')->default('PROGRESS');

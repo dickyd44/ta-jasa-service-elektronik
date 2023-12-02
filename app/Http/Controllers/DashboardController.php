@@ -9,7 +9,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $totalProgress = ServiceOrder::where('status', 'ON PROGRESS')->count();
+        $totalProgress = ServiceOrder::where('status', 'PROGRESS')->count();
         $totalSuccess = ServiceOrder::where('status', 'SUCCESS')->count();
         $totalPending = ServiceOrder::where('status', 'PENDING')->count();
         $totalCustomer = ServiceOrder::all('id')->count();

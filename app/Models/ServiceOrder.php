@@ -14,7 +14,6 @@ class ServiceOrder extends Model
         'address',
         'problem',
         'phone',
-        'type',
         'date',
         'price',
         'status'
