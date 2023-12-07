@@ -52,12 +52,13 @@
                                     </td>
                                     <td>{{ $item->address }}</td>
                                     <td>{{ $item->phone }}</td>
-                                    <div data-widget="expandable-table" aria-expanded="true">
-                                        <td>
-                                            {{ $item->problem }}
-                                            <i class="expandable-table-caret fas fa-caret-right fa-fw"></i>
-                                        </td>
-                                    </div>
+                                    <td>
+                                        {{ $item->problem }}
+                                        <br>
+                                        <small>
+                                            Rp. {{ $item->price }}
+                                        </small>
+                                    </td>
                                     <!-- <td>{{ $item->price }}</td> -->
                                     <td>
                                         @include('includes.status-order')
