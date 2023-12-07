@@ -26,10 +26,8 @@
                                     <th>Address</th>
                                     <th>Phone</th>
                                     <th>Problem</th>
-                                    <th>Date</th>
-                                    <th>Price</th>
                                     <th>Status</th>
-                                    <th>Print</th>
+                                    <th class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,12 +35,22 @@
                                 @foreach ($items as $item)
                                 <tr>
                                     <td>{{ $i }}</td>
-                                    <td>{{ $item->name }}</td>
+                                    <td>
+                                        {{ $item->name }}
+                                        <br>
+                                        <small>
+                                            {{ date_format(date_create($item->date), 'd/m/Y') }}
+                                        </small>
+                                    </td>
                                     <td>{{ $item->address }}</td>
                                     <td>{{ $item->phone }}</td>
-                                    <td>{{ $item->problem }}</td>
-                                    <td>{{ date_format(date_create($item->date), 'd/m/Y') }}</td>
-                                    <td>{{ $item->price }}</td>
+                                    <td>
+                                        {{ $item->problem }}
+                                        <br>
+                                        <small>
+                                            Rp. {{ $item->price }}
+                                        </small>
+                                    </td>
                                     <td>
                                         @include('includes.status-order')
                                     </td>

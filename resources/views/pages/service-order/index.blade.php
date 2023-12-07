@@ -32,8 +32,6 @@
                                     <th>Address</th>
                                     <th>Phone</th>
                                     <th>Problem</th>
-                                    <!-- <th>Date</th> -->
-                                    <!-- <th>Price</th> -->
                                     <th>Status</th>
                                     <th class="text-center">Action</th>
                                 </tr>
@@ -59,7 +57,6 @@
                                             Rp. {{ $item->price }}
                                         </small>
                                     </td>
-                                    <!-- <td>{{ $item->price }}</td> -->
                                     <td>
                                         @include('includes.status-order')
                                     </td>
