@@ -29,7 +29,7 @@
                     <div class="inner">
                         <div class="d-flex">
                             <h3>{{ $totalSuccess }}</h3>
-                            <i class="fas fa-check ml-auto p-2"style="font-size: 2rem"></i>
+                            <i class="fas fa-check ml-auto p-2" style="font-size: 2rem"></i>
                         </div>
                         <p class="font-weight-bold">Service Orders Success</p>
                     </div>

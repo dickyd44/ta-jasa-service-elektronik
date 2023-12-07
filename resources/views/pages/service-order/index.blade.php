@@ -32,10 +32,10 @@
                                     <th>Address</th>
                                     <th>Phone</th>
                                     <th>Problem</th>
-                                    <th>Date</th>
-                                    <th>Price</th>
+                                    <!-- <th>Date</th> -->
+                                    <!-- <th>Price</th> -->
                                     <th>Status</th>
-                                    <th>Action</th>
+                                    <th class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -43,18 +43,28 @@
                                 @foreach ($items as $item)
                                 <tr>
                                     <td>{{ $i }}</td>
-                                    <td>{{ $item->name }}</td>
+                                    <td>
+                                        {{ $item->name }}
+                                        <br>
+                                        <small>
+                                            {{ date_format(date_create($item->date), 'd/m/Y') }}
+                                        </small>
+                                    </td>
                                     <td>{{ $item->address }}</td>
                                     <td>{{ $item->phone }}</td>
-                                    <td>{{ $item->problem }}</td>
-                                    <td>{{ date_format(date_create($item->date), 'd/m/Y') }}</td>
-                                    <td>{{ $item->price }}</td>
+                                    <div data-widget="expandable-table" aria-expanded="true">
+                                        <td>
+                                            {{ $item->problem }}
+                                            <i class="expandable-table-caret fas fa-caret-right fa-fw"></i>
+                                        </td>
+                                    </div>
+                                    <!-- <td>{{ $item->price }}</td> -->
                                     <td>
                                         @include('includes.status-order')
                                     </td>
                                     <td>
                                         <div class="d-flex">
-                                            <button type="button" class="btn btn-secondary mr-2 hover" data-toggle="modal" data-target="#updateStatus{{ $item->id }}">
+                                            <button type="button" class="btn btn-secondary mr-2" data-toggle="modal" data-target="#updateStatus{{ $item->id }}">
                                                 <i class="fa fa-user-check"></i>
                                             </button>
                                             @include('pages.service-order.change-status')

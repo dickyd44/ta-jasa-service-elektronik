@@ -9,6 +9,9 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        $items = ServiceOrder::orderByRaw('status="PENDING" desc')->orderBy('created_at', 'desc')->get();
+        $changes = ['SUCCESS', 'PENDING'];
+
         $totalProgress = ServiceOrder::where('status', 'PROGRESS')->count();
         $totalSuccess = ServiceOrder::where('status', 'SUCCESS')->count();
         $totalPending = ServiceOrder::where('status', 'PENDING')->count();
@@ -19,6 +22,9 @@ class DashboardController extends Controller
             'totalSuccess' => $totalSuccess,
             'totalPending' => $totalPending,
             'totalCustomer' => $totalCustomer,
+
+            'items' => $items,
+            'changes' => $changes,
         ]);
     }
 }

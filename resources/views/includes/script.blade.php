@@ -25,15 +25,8 @@
     $(function() {
         $("#table-export")
             .DataTable({
-                fixedColumns: {
-                    left: 1,
-                    right: 1
-                },
-                paging: false,
-                scrollCollapse: true,
-                scrollX: true,
-                scrollY: 300,
-                responsive: false,
+                responsive: true,
+                paging: true,
                 lengthChange: false,
                 autoWidth: false,
                 buttons: ["excel", "pdf", "print"],
@@ -42,21 +35,16 @@
             .container()
             .appendTo("#table-export_wrapper .col-md-6:eq(0)");
         $("#table-primary").DataTable({
-            fixedColumns: {
-                left: 1,
-                right: 1
-            },
-            paging: false,
-            scrollCollapse: true,
-            scrollX: true,
-            scrollY: 300,
             paging: true,
             lengthChange: false,
             searching: true,
             ordering: true,
             info: true,
+            responsive: true,
             autoWidth: false,
-            responsive: false,
+            //
+            scrollX: false,
+            scrollCollapse: false,
         })
     });
 </script>

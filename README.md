@@ -73,3 +73,15 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
        @endforeach
     </select>
 </div>   -->
+
+<!-- 
+<td class="project_progress">
+<div class="progress progress-sm">
+<div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+</div>
+</div>
+<small>
+    60% Complete
+</small>
+</td>
+ -->
