@@ -29,10 +29,10 @@
                         <label for="InputProblem">Problem</label>
                         <input type="text" class="form-control" id="InputProblem" name="problem" value="{{ $item->problem }}" required>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="InputDate">Date</label>
                         <input type="date" class="form-control" id="InputDate" name="date" value="{{ $item->date }}" required>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="InputPrice">Price</label>
                         <input type="number" class="form-control" id="InputPrice" name="price" value="{{ $item->price }}" required>
