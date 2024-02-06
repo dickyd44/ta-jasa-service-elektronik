@@ -32,7 +32,7 @@
                     <!-- /.col -->
                     <div class="col-12">
                         <button type="submit" class="btn btn-dark bg-navy btn-block w-100">
-                            Sign In
+                            Login
                         </button>
                     </div>
                     <!-- /.col -->

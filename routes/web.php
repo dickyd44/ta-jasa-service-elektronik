@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\ServiceOrderController;
 use App\Http\Controllers\Auth\GantiPasswordController;
+use App\Http\Controllers\LandingPagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ use App\Http\Controllers\Auth\GantiPasswordController;
 |
 */
 
+Route::get('/', [LandingPagesController::class, 'index']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
@@ -28,7 +30,7 @@ Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
 Route::resource('/ganti-password', GantiPasswordController::class)->middleware('auth');
 Route::post('/logout', [LogoutController::class, 'logout'])->middleware('auth');
 
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 Route::resource('/service-order', ServiceOrderController::class)->middleware('auth');
 Route::get('/report', [ReportController::class, 'index'])->name('report')->middleware('auth');
 Route::get('/invoice', [InvoiceController::class, 'index'])->name('invoice')->middleware('auth');
